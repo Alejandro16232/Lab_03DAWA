@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Confirmación de Matrícula</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body style="background-image: url('https://programadorfreelancemadrid.com/wp-content/uploads/2019/05/e031b50a28f01c22d2524518b7454f9fe47ee4d004b0144492f6c47da2e5b6_640.jpg');
+              background-size: cover;
+              background-repeat: no-repeat;
+              background-attachment: fixed;
+              background-position: center;">
+
+    <div class="container mt-5 login-container">
+        <div class="text-center">
+            <h1>Confirmación de Matrícula</h1>
+            <hr>
+
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Curso seleccionado:</h5>
+                    <p class="card-text"><%= curso %></p>
+                </div>
+            </div>
+
+            <div class="card mt-3">
+                <div class="card-body">
+                    <h5 class="card-title">Módulos seleccionados:</h5>
+                    <ul>
+                        <% modulos.forEach(modulo => { %>
+                            <li><%= modulo %></li>
+                        <% }); %>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card mt-3">
+                <div class="card-body">
+                    <h5 class="card-title">Medio de pago seleccionado:</h5>
+                    <p class="card-text"><%= medioPago %></p>
+                </div>
+            </div>
+
+            <div class="card mt-3">
+                <div class="card-body">
+                    <h5 class="card-title">Total a pagar:</h5>
+                    <p class="card-text">S/ <%= precio %></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .login-container {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        }
+
+        .card {
+            margin-top: 20px;
+            border: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-title {
+            font-weight: bold;
+        }
+    </style>
+</body>
+</html>

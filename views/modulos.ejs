@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Módulos</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <form action="/medioPago" method="post" class="login-container">
+            <h1 class="text-center">Seleccione los módulos</h1>
+            <hr>
+            <div class="form-group">
+                <% for(let i = 0; i < 3; i++) { %>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="modulos" value="<%= ['Básico', 'Intermedio', 'Avanzado'][i] %>">
+                        <label class="form-check-label">
+                            <%= ['Básico', 'Intermedio', 'Avanzado'][i] %>
+                        </label>
+                    </div>
+                <% } %>
+            </div>
+            <input type="hidden" name="curso" value="<%= curso %>">
+            <input type="hidden" name="precio" value="<%= precio %>">
+
+            <button type="submit" class="btn btn-ingresar btn-block">Siguiente</button>
+        </form>
+    </div>
+
+    <style>
+        body {
+            background-image: url('https://programadorfreelancemadrid.com/wp-content/uploads/2019/05/e031b50a28f01c22d2524518b7454f9fe47ee4d004b0144492f6c47da2e5b6_640.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-container {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+        }
+
+        .btn-ingresar {
+            background-color: rgb(20, 118, 0);
+            color: white;
+            border: none;
+        }
+    </style>
+</body>
+</html>

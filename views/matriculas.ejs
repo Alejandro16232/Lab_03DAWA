@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Matrículas</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-image: url('https://programadorfreelancemadrid.com/wp-content/uploads/2019/05/e031b50a28f01c22d2524518b7454f9fe47ee4d004b0144492f6c47da2e5b6_640.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .matricula-container {
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            padding: 30px 50px; 
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-siguiente {
+            background-color: rgb(20, 118, 0); 
+            color: white;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="matricula-container mt-5">
+            <h1 class="text-center">Sistema de Matrículas</h1>
+            <hr>
+
+            <form action="/modulos" method="post">
+                <div class="form-group">
+                    <label for="curso">Seleccione un curso:</label>
+                    <select class="form-control" id="curso" name="curso">
+                        <% cursos.forEach(curso => { %>
+                            <option value="<%= curso %>"><%= curso %></option>
+                        <% }); %>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-siguiente btn-block">Siguiente</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
